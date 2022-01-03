@@ -25,7 +25,7 @@
 
   </div>
   <div id="bookForm">
-    <form action="">
+    <form id="addForm" action="#" onsubmit="addBook(createBook());">
       <label for="name">
         <input type="text" name="name" id="addName" placeholder="Title">
       </label>
@@ -34,6 +34,7 @@
         <input type="text" name="author" id="addAuthor" placeholder="Author">
       </label>
     </form>
+    <button type="submit" form="addForm" value="Submit">Add</button>
   </div>
   <script src="./script.js"></script> 
 </body>
