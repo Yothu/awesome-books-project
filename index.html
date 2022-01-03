@@ -10,7 +10,7 @@
 <body>
   <h1>Awesome Books</h1>
   <div id="bookContainer">
-    <div class="book">
+    <!-- <div class="book">
       <p>name</p>
       <p>author</p>
       <button>Remove</button>
@@ -21,7 +21,7 @@
       <p>author</p>
       <button>Remove</button>
       <hr size="2" width="100%" color="gray">
-    </div>
+    </div> -->
 
   </div>
   <div id="bookForm">
@@ -34,7 +34,7 @@
         <input type="text" name="author" id="addAuthor" placeholder="Author">
       </label>
     </form>
-    <button type="submit" form="addForm" value="Submit">Add</button>
+    <button onclick="addBook(createBook());">Add</button>
   </div>
   <script src="./script.js"></script> 
 </body>
