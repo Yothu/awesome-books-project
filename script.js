@@ -21,7 +21,12 @@ function createHTMLBook(bName, bAuthor) {
   bookDiv.appendChild(remButt);
 
   remButt.addEventListener('click', function () {
+    console.log("CHILDREN:", remButt.parentElement.parentElement.children);
+    console.log("BEFORE:",bookArray);
+    removeBook(remButt);
     remButt.parentElement.remove();
+
+    console.log("AFTER:",bookArray);
   });
 
   const line = document.createElement('hr');
@@ -31,6 +36,17 @@ function createHTMLBook(bName, bAuthor) {
   bookDiv.appendChild(line);
 
   return bookDiv;
+}
+
+function removeBook(remButt) {
+  const books = remButt.parentElement.parentElement.children;
+  for (let i = 0; i < books.length; i++) {
+    if (remButt.parentElement == books[i]) {
+      bookArray.splice(i,1);
+      localStorage.setItem('bookArray', JSON.stringify(bookArray));
+      break;
+    }
+  }
 }
 
 function setLocalStorage() {
