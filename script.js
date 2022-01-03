@@ -3,10 +3,6 @@ function Book(name, author) {
   this.author = author;
 }
 
-window.onload = function() {
-  setLocalStorage();
-}
-
 function setLocalStorage() {
   const localObj = localStorage.getItem('bookArray');
   const bookContainer = document.getElementById('bookContainer');
@@ -50,10 +46,8 @@ function createBook() {
   return new Book(name, author);
 }
 
-function createHTMLBook(params) {
-  
+window.onload = function() {
+  setLocalStorage();
 }
 
 let bookArray = JSON.parse(localStorage.getItem('bookArray'));
-
-console.log(bookArray);
