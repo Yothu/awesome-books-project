@@ -20,7 +20,9 @@ function createHTMLBook(bName, bAuthor) {
   remButt.classList.add('remButton');
   bookDiv.appendChild(remButt);
 
-  remButt.addEventListener('click', remButt.parentElement.remove());
+  remButt.addEventListener('click', function () {
+    remButt.parentElement.remove();
+  });
 
   const line = document.createElement('hr');
   line.setAttribute('size','2');
