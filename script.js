@@ -20,6 +20,8 @@ function createHTMLBook(bName, bAuthor) {
   remButt.classList.add('remButton');
   bookDiv.appendChild(remButt);
 
+  remButt.addEventListener('click', remButt.parentElement.remove());
+
   const line = document.createElement('hr');
   line.setAttribute('size','2');
   line.setAttribute('width','100%');
@@ -54,23 +56,12 @@ function createBook() {
   return new Book(name, author);
 }
 
-window.onload = function () {
-  const localObj = localStorage.getItem('bookArray');
-  if (localObj != null) {
-    setLocalStorage();
-  }
+const localObj = localStorage.getItem('bookArray');
+if (localObj != null) {
+  setLocalStorage();
 }
 
 let bookArray = [];
-
 if (localStorage.getItem('bookArray') != null) {
   bookArray = JSON.parse(localStorage.getItem('bookArray'));
-} 
-
-console.log("RemoveButtons:", document.querySelectorAll('.remButton'));
-
-let remButtons = document.querySelectorAll('.remButton');
-
-// remButtons.forEach((button) => {
-//   button.addEventListener('click', button.parentElement.remove());
-// });
+}
