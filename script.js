@@ -54,12 +54,18 @@ function createBook() {
   return new Book(name, author);
 }
 
-window.onload = function() {
-  setLocalStorage();
+window.onload = function () {
+  const localObj = localStorage.getItem('bookArray');
+  if (localObj != null) {
+    setLocalStorage();
+  }
 }
 
-let bookArray = JSON.parse(localStorage.getItem('bookArray'));
+let bookArray = [];
 
+if (localStorage.getItem('bookArray') != null) {
+  bookArray = JSON.parse(localStorage.getItem('bookArray'));
+} 
 
 console.log("RemoveButtons:", document.querySelectorAll('.remButton'));
 
@@ -68,4 +74,3 @@ let remButtons = document.querySelectorAll('.remButton');
 // remButtons.forEach((button) => {
 //   button.addEventListener('click', button.parentElement.remove());
 // });
-
