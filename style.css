@@ -15,6 +15,6 @@ input {
   width: 80vh;
 }
 
-#bookContainer > div:nth-child(even) {
+#bookContainer > div:nth-child(odd) {
   background-color: lightgray;
 }
