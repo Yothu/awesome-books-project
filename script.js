@@ -1,16 +1,42 @@
-let bookArray = [];
-
 function Book(name, author) {
   this.name = name;
   this.author = author;
 }
 
+class Books {
+  constructor() {
+    this.storage = [];
+  }
+
+  add(book) {
+    this.storage.push(book);
+  }
+
+  remove(index) {
+    this.storage.splice(index, 1);
+  }
+
+  set setBooks(books) {
+    this.storage = books;
+  }
+}
+
+function saveBooksInLocalStorage(books) {
+  localStorage.setItem('bookArray', JSON.stringify(books));
+}
+
+function getBooksFromLocalStorage() {
+  return JSON.parse(localStorage.getItem('bookArray'));
+}
+
+const bookStor = new Books();
+
 function removeBook(remButt) {
   const books = remButt.parentElement.parentElement.children;
   for (let i = 0; i < books.length; i += 1) {
     if (remButt.parentElement === books[i]) {
-      bookArray.splice(i, 1);
-      localStorage.setItem('bookArray', JSON.stringify(bookArray));
+      bookStor.remove(i);
+      saveBooksInLocalStorage(bookStor.storage);
       break;
     }
   }
@@ -57,26 +83,23 @@ function setLocalStorage() {
   }
 }
 
-function addBook(book) {
-  bookArray.push(book);
-  localStorage.setItem('bookArray', JSON.stringify(bookArray));
+function addBook(newBook) {
+  bookStor.add(newBook);
+
+  saveBooksInLocalStorage(bookStor.storage);
 
   const bookContainer = document.getElementById('bookContainer');
-  bookContainer.appendChild(createHTMLBook(book.name, book.author));
-
-  return bookArray;
-}
-
-function createBook() {
-  const name = document.getElementById('addName').value;
-  const author = document.getElementById('addAuthor').value;
-
-  return new Book(name, author);
+  bookContainer.appendChild(createHTMLBook(newBook.name, newBook.author));
 }
 
 const addBookbtn = document.getElementById('addBookbtn');
 addBookbtn.onclick = function addABook() {
-  addBook(createBook());
+  const name = document.getElementById('addName').value;
+  const author = document.getElementById('addAuthor').value;
+
+  const newBook = new Book(name, author);
+
+  addBook(newBook);
 };
 
 const localObj = localStorage.getItem('bookArray');
@@ -85,5 +108,5 @@ if (localObj != null) {
 }
 
 if (localStorage.getItem('bookArray') != null) {
-  bookArray = JSON.parse(localStorage.getItem('bookArray'));
+  bookStor.setBooks = getBooksFromLocalStorage();
 }
