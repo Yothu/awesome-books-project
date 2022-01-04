@@ -9,32 +9,18 @@
 </head>
 <body>
   <h1>Awesome Books</h1>
-  <div id="bookContainer">
-    <!-- <div class="book">
-      <p>name1</p>
-      <p>author</p>
-      <button class="remButton">Remove</button>
-      <hr size="2" width="100%" color="gray">
-    </div>
-    <div class="book">
-      <p>name2</p>
-      <p>author</p>
-      <button class="remButton">Remove</button>
-      <hr size="2" width="100%" color="gray">
-    </div> -->
-
-  </div>
+  <div id="bookContainer"></div>
   <div id="bookForm">
     <form id="addForm" action="#">
-      <label for="name">
+      <label for="addName">
         <input type="text" name="name" id="addName" placeholder="Title">
       </label>
       <br>
-      <label for="author">
+      <label for="addAuthor">
         <input type="text" name="author" id="addAuthor" placeholder="Author">
       </label>
     </form>
-    <button onclick="addBook(createBook());">Add</button>
+    <button type="button" id="addBookbtn">Add</button>
   </div>
   <script src="./script.js"></script> 
 </body>

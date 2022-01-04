@@ -1,6 +1,19 @@
+let bookArray = [];
+
 function Book(name, author) {
   this.name = name;
   this.author = author;
+}
+
+function removeBook(remButt) {
+  const books = remButt.parentElement.parentElement.children;
+  for (let i = 0; i < books.length; i += 1) {
+    if (remButt.parentElement === books[i]) {
+      bookArray.splice(i, 1);
+      localStorage.setItem('bookArray', JSON.stringify(bookArray));
+      break;
+    }
+  }
 }
 
 function createHTMLBook(bName, bAuthor) {
@@ -20,40 +33,27 @@ function createHTMLBook(bName, bAuthor) {
   remButt.classList.add('remButton');
   bookDiv.appendChild(remButt);
 
-  remButt.addEventListener('click', function () {
-    console.log("CHILDREN:", remButt.parentElement.parentElement.children);
-    console.log("BEFORE:",bookArray);
+  remButt.addEventListener('click', () => {
     removeBook(remButt);
     remButt.parentElement.remove();
-
-    console.log("AFTER:",bookArray);
   });
 
   const line = document.createElement('hr');
-  line.setAttribute('size','2');
-  line.setAttribute('width','100%');
+  line.setAttribute('size', '2');
+  line.setAttribute('width', '100%');
   line.setAttribute('color', 'gray');
   bookDiv.appendChild(line);
 
   return bookDiv;
 }
 
-function removeBook(remButt) {
-  const books = remButt.parentElement.parentElement.children;
-  for (let i = 0; i < books.length; i++) {
-    if (remButt.parentElement == books[i]) {
-      bookArray.splice(i,1);
-      localStorage.setItem('bookArray', JSON.stringify(bookArray));
-      break;
-    }
-  }
-}
-
 function setLocalStorage() {
   const localObj = localStorage.getItem('bookArray');
   const bookContainer = document.getElementById('bookContainer');
-  for (let i = 0; i < JSON.parse(localObj).length; i++) {
-    bookContainer.appendChild(createHTMLBook(JSON.parse(localObj)[i].name, JSON.parse(localObj)[i].author));
+  for (let i = 0; i < JSON.parse(localObj).length; i += 1) {
+    const { name } = JSON.parse(localObj)[i];
+    const { author } = JSON.parse(localObj)[i];
+    bookContainer.appendChild(createHTMLBook(name, author));
   }
 }
 
@@ -74,12 +74,16 @@ function createBook() {
   return new Book(name, author);
 }
 
+const addBookbtn = document.getElementById('addBookbtn');
+addBookbtn.onclick = function addABook() {
+  addBook(createBook());
+};
+
 const localObj = localStorage.getItem('bookArray');
 if (localObj != null) {
   setLocalStorage();
 }
 
-let bookArray = [];
 if (localStorage.getItem('bookArray') != null) {
   bookArray = JSON.parse(localStorage.getItem('bookArray'));
 }
