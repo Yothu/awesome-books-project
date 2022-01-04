@@ -6,12 +6,15 @@ class Books {
   constructor() {
     this.storage = [];
   }
+
   add(book) {
     this.storage.push(book);
   }
+
   remove(index) {
     this.storage.splice(index, 1);
   }
+
   set setBooks(books) {
     this.storage = books;
   }
