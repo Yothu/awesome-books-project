@@ -13,3 +13,7 @@ input {
 .bookC {
   width: 80vh;
 }
+
+#bookContainer > div:nth-child(even) {
+  background-color: lightgray;
+}

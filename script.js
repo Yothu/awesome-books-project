@@ -35,7 +35,7 @@ function removeBook(remButt) {
 }
 function createHTMLBook(bName, bAuthor) {
   const bookDiv = document.createElement('div');
-  bookDiv.classList.add('book', 'd-flex', 'bg-gray', 'justify-content-between', 'p-2');
+  bookDiv.classList.add('book', 'd-flex', 'justify-content-between', 'p-2');
   const name = document.createElement('p');
   name.textContent = `${bName} by ${bAuthor}`;
   name.classList.add('align-self-center', 'my-1');
