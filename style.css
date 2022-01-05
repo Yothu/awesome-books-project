@@ -19,10 +19,6 @@ input {
   background-color: lightgrey;
 }
 
-.bookC {
-  width: 80vh;
-}
-
 #bookContainer > div:nth-child(odd) {
   background-color: lightgray;
 }
@@ -34,7 +30,7 @@ hr {
   opacity: 0.8 !important;
 }
 
-li + li {
+.topList > li + li {
   border-left: 3px solid black;
 }
 
