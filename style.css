@@ -23,4 +23,5 @@ hr {
   height: 3px !important;
   width: 70% !important;
   color: black !important;
+  opacity: 0;
 }
