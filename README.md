@@ -2,7 +2,9 @@
 
 > Project with the porpouse of learning Javacript.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./homepage.png)
+![screenshot](./add_page.png)
+![screenshot](./contact_page.png)
 
 Additional description about the project and its features.
 
