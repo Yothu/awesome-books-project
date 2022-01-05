@@ -11,30 +11,67 @@
   <title>Awesome Books</title>
 </head>
 
-<body>
-  <div class="d-flex flex-column align-content-center align-items-center">
-    <h1 class="p-3">All Awesome Books</h1>
-    <div id="bookContainer" class="border justify-content-between border-3 border-dark d-flex flex-column bookC">
+<body onload="time()">
+  <header class="navbar d-block p-3">
+    <nav class="header-outer-container border border-3 border-dark d-flex justify-content-between p-2">
+      <div class="px-4">
+        <h1 class="my-0">Awesome Books</h1>
+      </div>
+      <div class="d-flex align-content-center">
+        <ul class="topList d-flex list-unstyled align-items-center my-0">
+          <li class="f-25px my-0 px-4"><a id="navBookList" href="#" class="text-decoration-none text-black">List</a></li>
+          <li class="f-25px my-0 px-4"><a id="navBookForm" href="#" class="text-decoration-none text-black">Add new</a></li>
+          <li class="f-25px my-0 px-4"><a id="navBookContact" href="#" class="text-decoration-none text-black">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="d-flex flex-row-reverse">
+      <p id="time" class="f-25px"></p>
     </div>
-    <div id="bookForm" class="p-1 d-flex flex-column">
-      <hr class="align-self-center my-3">
-      <h2 class="align-self-center">Add a new book</h2>
-      <form id="addForm" action="#">
-        <label for="addName" class="py-2">
-          <input type="text" name="name" id="addName" placeholder="Title">
+  </header>
+  <section id="bookList" class="d-flex flex-column align-content-center align-items-center mx-3">
+    <h2 class="p-3">All Awesome Books</h2>
+    <div id="bookContainer" class="border justify-content-between border-3 border-dark d-flex flex-column w-100"></div>
+  </section>
+  <section id=addBook class="d-none justify-content-center">
+    <div id="bookForm" class="p-1 d-flex flex-column w-50">
+      <h2 class="align-self-center py-3">Add a new book</h2>
+      <form id="addForm" action="#" class="pt-5">
+        <label for="addName" class="py-4 w-100">  
+          <input type="text" name="name" id="addName" placeholder="Title" class="f-25px w-100">
         </label>
         <br>
-        <label for="addAuthor" class="py-2">
-          <input type="text" name="author" id="addAuthor" placeholder="Author">
+        <label for="addAuthor" class="py-4 w-100">
+          <input type="text" name="author" id="addAuthor" placeholder="Author" class="f-25px w-100">
         </label>
       </form>
-      <button type="button" id="addBookbtn" class="align-self-end">Add</button>
+      <button type="button" id="addBookbtn" class="align-self-end p-2 my-4 fw-bold">Add</button>
     </div>
-  </div>
+  </section>
+  <section id="contact" class="container-fluid pt-5 d-none justify-content-center">
+    <div class="d-flex justify-content-center flex-column">
+      <h2 class="d-flex justify-content-center">Contact Information</h2>
+      <div class="mt-4">
+        <p class="f-20px mb-0">Do you have any question or you just want to say "Hello!"</p>
+        <p class="f-20px">You can reach out to us!</p>
+        <ul>
+          <li class="f-20px">Our email: mail@mail.com</li>
+          <li class="f-20px">Our phone number: 0088676365777</li>
+          <li class="f-20px">Our address: Streetname 22, 8469, City, Country</li>
+        </ul>  
+      </div>
+    </div>  
+  </section>
+
+  <footer class="footer-container fixed-bottom p-3">
+    <div class="copyright p-2 border border-dark border-3">
+      <p class="m-2 f-20px">Copyright David Vergaray and Boaz Aduda</p>
+    </div>
+  </footer>
+
   <script src="./script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
   </script>
 </body>
-
 </html>

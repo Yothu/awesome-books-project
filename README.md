@@ -2,7 +2,9 @@
 
 > Project with the porpouse of learning Javacript.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./homepage.png)
+![screenshot](./add_page.png)
+![screenshot](./contact_page.png)
 
 Additional description about the project and its features.
 
@@ -27,9 +29,9 @@ Additional description about the project and its features.
 
 👤 Boaz Aduda
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Aduda-Boaz](https://github.com/githubhandle)
+- Twitter: [@BoazAduda](https://twitter.com/BoazAduda)
+- LinkedIn: [Boaz Aduda](https://www.linkedin.com/in/boaz-aduda/)
 
 ## 🤝 Contributing
 

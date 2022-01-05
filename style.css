@@ -1,3 +1,11 @@
+.f-20px {
+  font-size: 20px;
+}
+
+.f-25px {
+  font-size: 25px;
+}
+
 p {
   margin: 0;
 }
@@ -11,10 +19,6 @@ input {
   background-color: lightgrey;
 }
 
-.bookC {
-  width: 80vh;
-}
-
 #bookContainer > div:nth-child(odd) {
   background-color: lightgray;
 }
@@ -24,4 +28,12 @@ hr {
   width: 70% !important;
   color: black !important;
   opacity: 0.8 !important;
+}
+
+.topList > li + li {
+  border-left: 3px solid black;
+}
+
+a:hover {
+  color: blue !important;
 }
