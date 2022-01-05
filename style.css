@@ -6,3 +6,22 @@ input {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+.bg-gray {
+  background-color: lightgrey;
+}
+
+.bookC {
+  width: 80vh;
+}
+
+#bookContainer > div:nth-child(odd) {
+  background-color: lightgray;
+}
+
+hr {
+  height: 3px !important;
+  width: 70% !important;
+  color: black !important;
+  opacity: 0.8 !important;
+}
