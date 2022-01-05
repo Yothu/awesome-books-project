@@ -18,3 +18,9 @@ input {
 #bookContainer > div:nth-child(odd) {
   background-color: lightgray;
 }
+
+hr {
+  height: 3px !important;
+  width: 70% !important;
+  color: black !important;
+}
